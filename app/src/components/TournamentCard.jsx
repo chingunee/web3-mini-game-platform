@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { triggerSuccessAlert } from "../slices/alertSlice";
 import { ethers } from "ethers";
 import moment from "moment";
@@ -14,6 +15,7 @@ const TournamentCard = (props) => {
   const app = useSelector((state) => state.app);
   const [playerData, setPlayerData] = useState(null);
   const [organizerData, setOrganizerData] = useState(null);
+  const navigate = useNavigate();
 
   const [loading, setLoading] = useState(false);
   const [loadingA, setLoadingA] = useState(false);
@@ -90,6 +92,8 @@ const TournamentCard = (props) => {
     );
     setLoadingB(false);
     setDisableLoaderBtnB(false);
+    navigate("/tournaments");
+    navigate(0);
   }
 
   async function grant() {

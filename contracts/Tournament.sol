@@ -5,11 +5,15 @@ import "./interfaces/IERC20Token.sol";
 import "./structs/Player.sol";
 import "./structs/TournamentDetails.sol";
 
+import "@openzeppelin/contracts/security/Pausable.sol";
+import "@openzeppelin/contracts/access/AccessControl.sol";
+
     // We will organize a weekly tournament in 
     // which users can participate by using MNFT tokens.
     // All tokens used for participation 
     // will be added to the tournament prize pool.
-contract Tournament {
+
+contract Tournament is Pausable, AccessControl {
     uint public prize;
     uint public playerId;
     uint public tournamentEndTime;
@@ -50,9 +54,10 @@ contract Tournament {
             organizer = _tournamentOwner;
             tournamentEndTime = block.timestamp + _tournamentEndTime;
             tournamentDetails = _tournamentDetails;
+            _grantRole(DEFAULT_ADMIN_ROLE, _tournamentOwner);
     }
 
-    function participate(string memory _nickname, uint amount) external {
+    function participate(string memory _nickname, uint amount) external whenNotPaused() {
         if(block.timestamp > tournamentEndTime)
             revert TournamentAlreadyEnded();
         require(
@@ -89,7 +94,7 @@ contract Tournament {
         emit PrizeIncreased(prize);
     }
 
-    function buyLife(uint amount) public onlyPlayer {
+    function buyLife(uint amount) public onlyPlayer whenNotPaused() {
         bool sentTokenToLife = token.transferFrom(msg.sender, address(this), amount);
         require(sentTokenToLife, "The transfer of buying a life has failed.");
         prize += amount;
@@ -108,7 +113,7 @@ contract Tournament {
         emit PrizeIncreased(prize);
     }
 
-    function addScore(uint _score) public onlyPlayer {
+    function addScore(uint _score) public onlyPlayer whenNotPaused() {
         require(
             _score >= 0, 
             "Score cannot be negative");
@@ -120,7 +125,7 @@ contract Tournament {
         players[addressToPlayerId[msg.sender] - 1].life -= FEE;
     }
 
-    function grantPrize() public onlyOrganizer {
+    function grantPrize() public onlyOrganizer whenNotPaused() {
         if(block.timestamp < tournamentEndTime)
             revert TournamentNotYetEnded();
         
@@ -162,5 +167,13 @@ contract Tournament {
             addressJoined[msg.sender] == true
             , "Not registered address");
         _;
+    }
+
+    function pause() external onlyRole(DEFAULT_ADMIN_ROLE) {
+        _pause();
+    }
+
+    function unpause() external onlyRole(DEFAULT_ADMIN_ROLE) {
+        _unpause();
     }
 }

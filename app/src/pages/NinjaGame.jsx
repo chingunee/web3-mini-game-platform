@@ -15,7 +15,7 @@ export default function NinjaGame() {
   const [disableLoaderBtn, setDisableLoaderBtn] = useState(false);
   const [amount, setAmount] = useState(0);
 
-  let addr = "0x005729B47BF446CA54b56e3cA41239Ab5E06889E";
+  let addr = "0xE6405D1049db6Cb602D59d391f44A6c67A24D872";
 
   async function increase() {
     setLoading(true);
@@ -698,15 +698,37 @@ export default function NinjaGame() {
           className="mt-20 cursor-pointer flex flex-col justify-center items-center w-full h-[30rem] font-body"
         >
           <canvas ref={canvasRef} width="375" height="375" />
-          <div
-            ref={introRef}
-            className={`w-[200px] h-[150px] absolute font-semibold text-lg text-center text-black`}
-          >
-            Hold down the mouse to stretch out a stick
-          </div>
+          {app.hasLife && (
+            <div
+              ref={introRef}
+              className={`w-[200px] h-[150px] absolute font-semibold text-lg text-center text-black`}
+            >
+              Hold down the mouse to stretch out a stick
+            </div>
+          )}
+
+          {/* {!app.hasLife && (
+            <div
+              ref={introRef}
+              className={`w-[200px] h-[150px] absolute font-semibold text-lg text-center text-black`}
+            >
+              <span>You run out of life</span>
+            </div>
+          )} */}
+
+          {!app.hasLife && (
+            <div
+              ref={introRef}
+              className={`w-[200px] h-[150px] absolute font-semibold text-lg text-center text-black`}
+            >
+              <span>You run out of life</span>
+            </div>
+          )}
+
           <div ref={perfectRef} className={`absolute opacity-0`}>
             DOUBLE SCORE
           </div>
+
           {app.hasLife && (
             <button
               onClick={() => add()}
@@ -716,6 +738,7 @@ export default function NinjaGame() {
               RESTART
             </button>
           )}
+
           {!app.hasLife && (
             <button
               onClick={() => buy()}

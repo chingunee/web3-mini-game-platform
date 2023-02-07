@@ -32,6 +32,9 @@ module.exports = {
       allowUnlimitedContractSize: true,
     },
   },
+  etherscan: {
+    apiKey: process.env.POLYGONSCAN_API_KEY,
+  },
   abiExporter: {
     path: "./app/abi",
     runOnCompile: true,
