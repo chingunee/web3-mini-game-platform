@@ -38,7 +38,6 @@ contract TournamentFactory is AccessControl {
   }
 
   function createTournament(
-    address _mockToken,
     address _tournamentOwner,
     uint _tournamentEndTime,
     TournamentDetails memory _tournamentDetails
@@ -48,7 +47,6 @@ contract TournamentFactory is AccessControl {
         "USER ISN'T ORGANIZER");
 
     Tournament _tournament = new Tournament(
-      _mockToken,
       _tournamentOwner,
       _tournamentEndTime,
       _tournamentDetails

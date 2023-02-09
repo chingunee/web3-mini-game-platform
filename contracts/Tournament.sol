@@ -7,10 +7,10 @@ import "./structs/TournamentDetails.sol";
 
 import "@openzeppelin/contracts/security/Pausable.sol";
 import "@openzeppelin/contracts/access/AccessControl.sol";
-
+    
     // We will organize a weekly tournament in 
     // which users can participate by using MNFT tokens.
-    // All tokens used for participation 
+    // All tokens used for participation
     // will be added to the tournament prize pool.
 
 contract Tournament is Pausable, AccessControl {
@@ -20,7 +20,7 @@ contract Tournament is Pausable, AccessControl {
     uint public constant FEE = 1;
 
     address public organizer;
-    address public mockToken;
+    address public constant MNFT = 0x3235B13708F178Af6F110dE7177ED5De10c1093d;
 
     bool ended;
 
@@ -45,12 +45,11 @@ contract Tournament is Pausable, AccessControl {
     error ClaimPrizeAlreadyCalled();
 
     constructor(
-        address _mockToken,
         address _tournamentOwner,
         uint _tournamentEndTime,
         TournamentDetails memory _tournamentDetails
         ) {
-            token = IERC20Token(_mockToken);
+            token = IERC20Token(MNFT);
             organizer = _tournamentOwner;
             tournamentEndTime = block.timestamp + _tournamentEndTime;
             tournamentDetails = _tournamentDetails;

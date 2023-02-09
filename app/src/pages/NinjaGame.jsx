@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { ethers } from "ethers";
 import { triggerSuccessAlert } from "../slices/alertSlice";
-import { getMockTokenContract } from "../../contracts/MockTokenContractHelper";
+import { getMNFTContract } from "../../contracts/MNFTContractHelper";
 import { getTournamentContract } from "../../contracts/TournamentContractHelper";
 
 export default function NinjaGame() {
@@ -20,10 +20,10 @@ export default function NinjaGame() {
   async function increase() {
     setLoading(true);
     setDisableLoaderBtn(true);
-    const { mockTokenWriteContract } = await getMockTokenContract();
+    const { mnftWriteContract } = await getMNFTContract();
     let amountSC = ethers.utils.parseEther(amount.toString(), "18");
 
-    let tx = await mockTokenWriteContract.increaseAllowance(addr, amountSC);
+    let tx = await mnftWriteContract.increaseAllowance(addr, amountSC);
     await tx.wait();
 
     dispatch(

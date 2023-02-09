@@ -70,7 +70,7 @@ export default function MintTournament() {
       </div>
       <div className="xl:container mx-auto xl:px-20 md:px-12 px-4 py-20 text-white font-body">
         <div className="w-full sm:w-2/3 md:w-1/2 lg:w-2/5 mx-auto bg-[#0a1f2f] rounded p-6 space-y-6">
-          <div className="space-y-2">
+          {/* <div className="space-y-2">
             <p className="font-medium text-white/80">Token Address</p>
             <input
               className="bg-[#02121d] rounded w-full h-12 px-3 focus:outline-none"
@@ -79,7 +79,7 @@ export default function MintTournament() {
               type="text"
               onChange={handleChange}
             />
-          </div>
+          </div> */}
           <div className="space-y-2">
             <p className="font-medium text-white/80">
               Tournament Owner Address
