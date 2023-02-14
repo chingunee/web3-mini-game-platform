@@ -15,6 +15,7 @@ const TournamentCard = (props) => {
   const app = useSelector((state) => state.app);
   const [playerData, setPlayerData] = useState(null);
   const [organizerData, setOrganizerData] = useState(null);
+
   const navigate = useNavigate();
 
   const [loading, setLoading] = useState(false);
@@ -44,6 +45,7 @@ const TournamentCard = (props) => {
       ethereum.selectedAddress
     );
     let data = await organizerNftReadContract.getOrganizerDetail(id.toNumber());
+
     setOrganizerData(data);
   }
 
@@ -56,6 +58,7 @@ const TournamentCard = (props) => {
       ethereum.selectedAddress
     );
     let p_data = await tournamentReadContract.players(id.toNumber() - 1);
+
     setPlayerData(p_data);
   }
 
@@ -199,6 +202,18 @@ const TournamentCard = (props) => {
             </p>
           </div>
         )}
+        {/* 
+        {app.isPlayer && (
+          <div className="font-body text-lg pt-4">
+            <p className="text-white/80 font-medium">Balance:</p>
+            <div className="space-y-1">
+              <div className="font-body text-white font-semibold text-xl flex space-x-1 items-center">
+                {playerData && playerData.balanceBN.toNumber()}
+                <span className="pl-1">MNFT</span>
+              </div>
+            </div>
+          </div>
+        )} */}
 
         {app.isOrganizer && (
           <div className="pt-4 flex items-center justify-between font-body text-lg">
@@ -217,12 +232,24 @@ const TournamentCard = (props) => {
             </p>
           </div>
         )}
+
+        {app.isOrganizer && (
+          <div className="font-body text-lg pt-4">
+            <p className="text-white/80 font-medium">Balance:</p>
+            <div className="space-y-1">
+              <div className="font-body text-white font-semibold text-xl flex space-x-1 items-center">
+                0.0 <span className="pl-1">MNFT</span>
+              </div>
+            </div>
+          </div>
+        )}
+
         <div className="font-body text-lg pt-4">
           <p className="text-white/80 font-medium">Raised Amount</p>
           <div className="space-y-1">
             <div className="font-body text-white font-semibold text-xl flex space-x-1 items-center">
               {data.tournamentPrize}
-              <span className="pl-1">MTK</span>
+              <span className="pl-1">MNFT</span>
             </div>
           </div>
         </div>

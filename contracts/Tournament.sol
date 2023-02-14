@@ -78,7 +78,7 @@ contract Tournament is Pausable, AccessControl {
 
         players.push(Player({
                 life: amount = amount / (100 * 1e18), // You can get 1 life with 100 tokens.
-                score: 0, 
+                score: 0,
                 p_address: msg.sender,
                 nickname: _nickname
             }));
@@ -88,7 +88,7 @@ contract Tournament is Pausable, AccessControl {
 
         registeredNickname[_nickname] = true;
         addressJoined[msg.sender] = true;
-
+                    
         emit NewPlayer(msg.sender, _nickname);
         emit PrizeIncreased(prize);
     }

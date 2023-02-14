@@ -31,6 +31,7 @@ async function main() {
     organizerFactory: organizerFactoryContract.address,
     organizerNft: organizerNftAddress,
     tournamentFactory: tournamentFactoryContract.address,
+    MNFT: "0x3235B13708F178Af6F110dE7177ED5De10c1093d",
   };
   createAddressJson(
     path.join(__dirname, "/../app/genAddresses.json"),
