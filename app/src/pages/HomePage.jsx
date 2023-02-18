@@ -14,6 +14,8 @@ import StepCard from "../components/StepCard";
 import RoadmapCard from "../components/RoadmapCard";
 import OfferCard from "../components/OfferCard";
 
+import bg from "../../assets/back.png";
+
 import { UseWindowSize } from "../components/UseWindowSize";
 import Footer from "../components/Footer";
 
@@ -53,34 +55,15 @@ export default function HomePage() {
   return (
     <div className="w-full">
       <div
-        style={{ backgroundImage: `url(${background})` }}
-        className="object-cover lg:h-screen w-screen py-20 lg:py-0"
+        style={{ backgroundImage: `url(${bg})` }}
+        // className="object-cover lg:h-screen w-screen py-20 lg:py-0"
+        className="bg-hero bg-no-repeat bg-cover bg-center  object-cover lg:h-screen w-screen py-20 lg:py-0 z-1"
       >
         <div className="h-full xl:container xl:px-20 md:px-12 px-4 mx-auto flex flex-col md:flex-row items-center space-y-20 md:space-y-0">
-          <div className="w-full md:w-1/2 text-white font-body">
-            <div className="w-full xl:w-2/3 space-y-6">
-              <h1 className="uppercase font-bold lg:text-7xl md:text-5xl text-4xl">
-                web 3.0 games for mnft community
-              </h1>
-              <p className="font-medium lg:text-lg">
-                The next generation gaming ecosystem for communities web 3.0
-                platform{" "}
-              </p>
-              <button className="bg-[#28dbd1] text-[#0a1f2f] hover:text-[#28dbd1] hover:border-[#28dbd1] hover:skew-x-0 duration-300 border border-transparent hover:bg-[#0a1f2f] font-semibold text-lg h-14 px-8 rounded -skew-x-6">
-                Explore
-              </button>
-            </div>
-          </div>
-          <div className="hidden md:w-1/2 md:flex justify-center items-end xl:animate-bounce-slow">
-            <img
-              className="xl:w-1/2 w-2/3 object-contain"
-              src={rocket}
-              alt="img"
-            />
-          </div>
+          <div className="w-full md:w-1/2 text-white font-body"></div>
         </div>
       </div>
-      <div className="bg-[#0a1f2f]">
+      <div className="bg-gradient-to-r from-[#04865A] to-[#000809] ">
         <div className="xl:container xl:px-20 md:px-12 px-4 mx-auto h-full w-full md:py-32 py-10 font-body flex flex-col items-center space-y-4">
           <p className="text-[#28dbd1] font-semibold md:text-2xl text-lg">
             Getting Start
@@ -124,13 +107,13 @@ export default function HomePage() {
             </div>
           </div>
           <div className="pt-10">
-            <button className="bg-[#28dbd1] text-[#0a1f2f] hover:text-[#28dbd1] hover:border-[#28dbd1] hover:skew-x-0 duration-300 border border-transparent hover:bg-[#0a1f2f] font-semibold text-lg h-14 px-8 rounded -skew-x-6">
+            <button className="bg-[#02E111] text-[#0a1f2f] hover:text-[#28dbd1] hover:border-[#28dbd1] hover:skew-x-0 duration-300 border border-transparent hover:bg-[#0a1f2f] font-semibold text-lg h-14 px-8 rounded -skew-x-6">
               Verify KYC
             </button>
           </div>
         </div>
       </div>
-      <div className="bg-[#02121d]">
+      <div className="bg-gradient-to-r from-[#04865A] to-[#000809] ">
         <div className="xl:container xl:px-20 md:px-12 px-4 mx-auto h-full w-full md:py-20 py-10 font-body flex flex-col items-center space-y-4">
           <p className="text-[#28dbd1] font-semibold md:text-2xl text-lg">
             Explore
@@ -226,7 +209,7 @@ export default function HomePage() {
           </div>
         </div>
       </div>
-      <div className="bg-[#0a1f2f]">
+      <div className="bg-gradient-to-r from-[#04865A] to-[#000809] ">
         <div className="xl:container xl:px-20 md:px-12 px-4 mx-auto h-full w-full md:py-32 py-10 font-body flex flex-col items-center space-y-4">
           <p className="text-[#28dbd1] font-semibold md:text-2xl text-lg">
             Benefits

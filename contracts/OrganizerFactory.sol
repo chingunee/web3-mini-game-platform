@@ -22,7 +22,7 @@ contract OrganizerFactory is AccessControl {
     address organizerAddress,
     uint organizerId
   );
-
+  
   constructor() {
     _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
     nft = new OrganizerNFT(address(this));
