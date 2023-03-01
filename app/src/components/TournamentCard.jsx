@@ -6,7 +6,8 @@ import { ethers } from "ethers";
 import moment from "moment";
 
 import { getTournamentContract } from "../../contracts/TournamentContractHelper";
-import { getMNFTContract } from "../../contracts/MNFTContractHelper";
+// import { getMNFTContract } from "../../contracts/MNFTContractHelper";
+import { getMockTokenContract } from "../../contracts/MockTokenContractHelper";
 
 import { getOrganizerNftContract } from "../../contracts/OrganizerNFTContractHelper";
 import { getOrganizerFactoryContract } from "../../contracts/OrganizerContractHelper";
@@ -65,10 +66,10 @@ const TournamentCard = (props) => {
   async function increase() {
     setLoadingA(true);
     setDisableLoaderBtnA(true);
-    const { mnftWriteContract } = await getMNFTContract();
+    const { mockTokenWriteContract } = await getMockTokenContract();
     let amountSC = ethers.utils.parseEther(score.toString(), "18");
 
-    let tx = await mnftWriteContract.increaseAllowance(
+    let tx = await mockTokenWriteContract.increaseAllowance(
       data.tournamentAddress,
       amountSC
     );

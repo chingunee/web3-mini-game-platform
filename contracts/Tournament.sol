@@ -20,7 +20,8 @@ contract Tournament is Pausable, AccessControl {
     uint public constant FEE = 1;
 
     address public organizer;
-    address public constant MNFT = 0x3235B13708F178Af6F110dE7177ED5De10c1093d;
+    address public mockToken;
+    // address public constant MNFT = 0x3235B13708F178Af6F110dE7177ED5De10c1093d;
 
     bool ended;
 
@@ -45,11 +46,12 @@ contract Tournament is Pausable, AccessControl {
     error ClaimPrizeAlreadyCalled();
 
     constructor(
+        address _mockToken,
         address _tournamentOwner,
         uint _tournamentEndTime,
         TournamentDetails memory _tournamentDetails
         ) {
-            token = IERC20Token(MNFT);
+            token = IERC20Token(_mockToken);
             organizer = _tournamentOwner;
             tournamentEndTime = block.timestamp + _tournamentEndTime;
             tournamentDetails = _tournamentDetails;

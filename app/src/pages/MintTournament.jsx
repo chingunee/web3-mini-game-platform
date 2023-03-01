@@ -35,6 +35,7 @@ export default function MintTournament() {
         await getTournamentFactoryContract();
       let tournamentDetails = [state._name, state._description, state._profile];
       const tx = await tournamentFactoryWriteContract.createTournament(
+        state._mockToken,
         state._tournamentOwner,
         moment(state._tournamentEndTime).unix(),
         tournamentDetails
@@ -69,6 +70,18 @@ export default function MintTournament() {
       </div>
       <div className="xl:container mx-auto xl:px-20 md:px-12 px-4 py-20 text-white font-body">
         <div className="w-full sm:w-2/3 md:w-1/2 lg:w-2/5 mx-auto bg-[#0a1f2f] rounded p-6 space-y-6">
+          <div className="space-y-2">
+            <p className="font-medium text-white/80">
+              Tournament Token Address
+            </p>
+            <input
+              className="bg-[#02121d] rounded w-full h-12 px-3 focus:outline-none"
+              placeholder="Enter tournamet token address here"
+              name="_mockToken"
+              type="text"
+              onChange={handleChange}
+            />
+          </div>
           <div className="space-y-2">
             <p className="font-medium text-white/80">
               Tournament Owner Address

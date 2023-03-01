@@ -1,7 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
 
-import background from "../../assets/bg.png";
-import rocket from "../../assets/rocket.png";
 import stepImg1 from "../../assets/stepImg1.png";
 import stepImg2 from "../../assets/stepImg2.png";
 import stepImg3 from "../../assets/stepImg3.png";
@@ -247,7 +245,7 @@ export default function HomePage() {
                 title="Elite Projects"
                 img={offerImg4}
                 desc="Lorem ipsum dolor, sit amet consec tetur adipisicing elit. 
-                                Provident eius eaque aspernatur amet "
+                                Provident eius eaque aspernatur amet"
               />
             </div>
           </div>

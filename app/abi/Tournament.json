@@ -3,6 +3,11 @@
     "inputs": [
       {
         "internalType": "address",
+        "name": "_mockToken",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
         "name": "_tournamentOwner",
         "type": "address"
       },
@@ -269,19 +274,6 @@
     "type": "function"
   },
   {
-    "inputs": [],
-    "name": "MNFT",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
     "inputs": [
       {
         "internalType": "uint256",
@@ -424,6 +416,19 @@
     "name": "increasePrize",
     "outputs": [],
     "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "mockToken",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
     "type": "function"
   },
   {
