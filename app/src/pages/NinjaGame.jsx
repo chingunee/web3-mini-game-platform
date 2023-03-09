@@ -18,6 +18,53 @@ export default function NinjaGame() {
 
   let addr = "0x6fbc403E7f1Fb0775FEF5c80Eb68377af2F1441C";
 
+  // const siweSign = async (siweMessage) => {
+  //   try {
+  //     const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+  //     const account = accounts[0];
+  //     const msg = 0x${Buffer.from(siweMessage, 'utf8').toString('hex')};
+  //     const siweSignature = await window.ethereum.request({
+  //       method: 'personal_sign',
+  //       params: [msg, account, 'Example password'],
+  //     });
+  //     const verifyingAddress = ethers.utils.verifyMessage(siweMessage, siweSignature);
+  //     if (window.ethereum.selectedAddress === verifyingAddress.toLowerCase()) {
+  //       setSelectedAddress(account);
+  //       setWeb3LoginModalOpen(!web3LoginModalOpen);
+  //       setAddressSelected(true);
+  //       // setSelectedSignature(siweSignature);
+  //       const item = {
+  //         signature: siweSignature,
+  //         expiry: moment().add(1, 'days').format(),
+  //       };
+  //       window.localStorage.setItem(window.ethereum.selectedAddress, JSON.stringify(item));
+  //     } else {
+  //       toast('Signature is not valid');
+  //     }
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+
+  // const handleSiweLogin = async () => {
+  //   try {
+  //     const domain = window.location.host;
+  //     const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+  //     const account = accounts[0];
+  //     const randomBytes = ethers.utils.randomBytes(8);
+  //     const hexRandom = 0x${Buffer.from(randomBytes, 'utf8').toString('hex')};
+  //     const date = moment().format();
+  //     const siweMessage = `${domain} wants you to sign in with your Ethereum account:\n${account}\n\nI accept the MetaMask Terms of Service: https://community.metamask.io/tos\n\nURI: https://${domain}\nVersion: 1\nChain ID: 137\nNonce: ${hexRandom}\nIssued At: ${date}Z\nExpire At: ${moment(
+  //       date
+  //     )
+  //       .add(1, 'days')
+  //       .format()}Z`;
+  //     siweSign(siweMessage);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+
   async function increase() {
     setLoading(true);
     setDisableLoaderBtn(true);
@@ -707,15 +754,6 @@ export default function NinjaGame() {
               Hold down the mouse to stretch out a stick
             </div>
           )}
-
-          {/* {!app.hasLife && (
-            <div
-              ref={introRef}
-              className={`w-[200px] h-[150px] absolute font-semibold text-lg text-center text-black`}
-            >
-              <span>You run out of life</span>
-            </div>
-          )} */}
 
           {!app.hasLife && (
             <div

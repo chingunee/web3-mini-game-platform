@@ -61,9 +61,10 @@ export default function HomePage() {
           <div className="w-full md:w-1/2 text-white font-body"></div>
         </div>
       </div>
-      <div className="bg-gradient-to-r from-[#04865A] to-[#000809] ">
+      {/* <div className="bg-gradient-to-r from-[#000000] to-[#434343] "> */}
+      <div className="bg-[#18181b]">
         <div className="xl:container xl:px-20 md:px-12 px-4 mx-auto h-full w-full md:py-32 py-10 font-body flex flex-col items-center space-y-4">
-          <p className="text-[#28dbd1] font-semibold md:text-2xl text-lg">
+          <p className="text-[#02E111] font-semibold md:text-2xl text-lg">
             Getting Start
           </p>
           <h1 className="text-white font-bold md:text-5xl text-2xl text-center">
@@ -111,9 +112,9 @@ export default function HomePage() {
           </div>
         </div>
       </div>
-      <div className="bg-gradient-to-r from-[#04865A] to-[#000809] ">
+      <div className="bg-gradient-to-r from-[#000000] to-[#434343]">
         <div className="xl:container xl:px-20 md:px-12 px-4 mx-auto h-full w-full md:py-20 py-10 font-body flex flex-col items-center space-y-4">
-          <p className="text-[#28dbd1] font-semibold md:text-2xl text-lg">
+          <p className="text-[#02E111] font-semibold md:text-2xl text-lg">
             Explore
           </p>
           <h1 className="text-white font-bold md:text-5xl text-2xl">
@@ -142,7 +143,7 @@ export default function HomePage() {
             <div
               className={`p-1 h-[${cardHeight * 5}rem] bg-[#0a1f2f] rounded`}
             >
-              <div className={`bg-[#28dbd1] w-3 h-[30rem] rounded`}></div>
+              <div className={`bg-[#02E111] w-3 h-[30rem] rounded`}></div>
             </div>
             <div className="w-1/2 flex flex-col space-y-[13rem]">
               <RoadmapCard
@@ -207,7 +208,7 @@ export default function HomePage() {
           </div>
         </div>
       </div>
-      <div className="bg-gradient-to-r from-[#04865A] to-[#000809] ">
+      <div className="bg-gradient-to-r from-[#000000] to-[#434343]">
         <div className="xl:container xl:px-20 md:px-12 px-4 mx-auto h-full w-full md:py-32 py-10 font-body flex flex-col items-center space-y-4">
           <p className="text-[#28dbd1] font-semibold md:text-2xl text-lg">
             Benefits

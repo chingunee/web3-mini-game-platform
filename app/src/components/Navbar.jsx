@@ -9,7 +9,8 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="h-24 w-screen bg-gradient-to-r from-[#04865A] to-[#000809] flex items-center">
+      <header className="h-24 w-screen bg-black flex items-center">
+        {/* <header className="h-24 w-screen bg-gradient-to-r from-[#04865A] to-[#000809] flex items-center"> */}
         <div className="xl:container w-full xl:px-20 md:px-12 px-4 mx-auto flex justify-between items-center">
           <Link to="/">
             <img className="h-40" src={crazy_logo} alt="img" />

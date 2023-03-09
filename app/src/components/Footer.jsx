@@ -32,7 +32,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="w-full h-1/6 border-t-[0.01rem] border-gray-600 flex items-center justify-center">
+        <div className="bg-[#18181b] w-full h-1/6 border-t-[0.01rem] border-gray-600 flex items-center justify-center">
           <p className="text-white/70 font-body md:text-lg font-medium">
             CRAZY GOAT © 2023 | All Rights Reserved
           </p>
