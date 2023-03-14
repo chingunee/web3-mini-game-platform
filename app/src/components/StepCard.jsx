@@ -25,7 +25,7 @@ export default function StepCard({
       <h2 className="md:text-2xl text-lg font-bold">
         {step}. {title}
       </h2>
-      <p className="font-medium text-white/80 text-center text-sm md:text-base">
+      <p className="font-medium text-white/80 text-center text-xs md:text-base">
         {desc}
       </p>
     </div>

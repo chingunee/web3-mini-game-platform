@@ -64,11 +64,11 @@ export default function HomePage() {
       {/* <div className="bg-gradient-to-r from-[#000000] to-[#434343] "> */}
       <div className="bg-[#18181b]">
         <div className="xl:container xl:px-20 md:px-12 px-4 mx-auto h-full w-full md:py-32 py-10 font-body flex flex-col items-center space-y-4">
-          <p className="text-[#02E111] font-semibold md:text-2xl text-lg">
-            Getting Start
+          <p className="text-[#02E111] font-semibold md:text-5xl text-lg">
+            What is Web 3.0 Tournament?
           </p>
-          <h1 className="text-white font-bold md:text-5xl text-2xl text-center">
-            Simple as 1,2,3
+          <h1 className="text-white font-bold md:text-lg text-sm text-center">
+            Here are a few reason why you should play games with CRAZY GOAT
           </h1>
           <div className="flex flex-col md:flex-row justify-between items-center md:pt-16 pt-10 space-y-6 md:space-y-0">
             <div className="md:w-1/4">
@@ -77,9 +77,9 @@ export default function HomePage() {
                 toggle={toggleHoverCard}
                 isHover={isHoveredCard}
                 step="1"
-                title="Submit KYC"
+                title="Transparency"
                 img={stepImg1}
-                desc="Lorem ipsum dolor sit amet consectetur adipiscing elit odio massa ege."
+                desc="All participants can see and verify the rules, and there is no need to rely on a third party to enforce them."
               />
             </div>
             <div className="md:w-1/4">
@@ -87,10 +87,10 @@ export default function HomePage() {
                 id="2"
                 toggle={toggleHoverCard}
                 isHover={isHoveredCard}
-                step="1"
-                title="Submit KYC"
+                step="2"
+                title="Security"
                 img={stepImg2}
-                desc="Lorem ipsum dolor sit amet consectetur adipiscing elit odio massa ege."
+                desc="The code cannot be tampered with or hacked, and the results of the tournament are final and cannot be altered"
               />
             </div>
             <div className="md:w-1/4">
@@ -98,18 +98,18 @@ export default function HomePage() {
                 id="3"
                 toggle={toggleHoverCard}
                 isHover={isHoveredCard}
-                step="1"
-                title="Submit KYC"
+                step="3"
+                title="Cost-effective"
                 img={stepImg3}
-                desc="Lorem ipsum dolor sit amet consectetur adipiscing elit odio massa ege."
+                desc="Participants can receive higher payouts and entry fees can be lower. And supports all of the ERC20 tokens"
               />
             </div>
           </div>
-          <div className="pt-10">
+          {/* <div className="pt-10">
             <button className="bg-[#02E111] text-[#0a1f2f] hover:text-[#28dbd1] hover:border-[#28dbd1] hover:skew-x-0 duration-300 border border-transparent hover:bg-[#0a1f2f] font-semibold text-lg h-14 px-8 rounded -skew-x-6">
-              Verify KYC
+              Participate
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
       <div className="bg-gradient-to-r from-[#000000] to-[#434343]">
